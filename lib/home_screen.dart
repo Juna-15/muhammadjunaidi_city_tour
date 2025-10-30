@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-}
 
 @override
 Widget build(BuildContext context){
@@ -32,7 +31,7 @@ Widget _buildGallerySection(){
   final List<String> imageUrls = [
     'https://picsum.photos/id/162/300/200',
     'https://picsum.photos/id/164/300/200',
-    'https://picsum.photos/id/1',
+    'https://picsum.photos/id/174/300/200',
   ];
   return SingleChildScrollView(
     scrollDirection: Axis.horizontal,
@@ -71,7 +70,7 @@ Widget _buildTextSection(){
     crossAxisAlignment: CrossAxisAlignment.start,
     children: const <Widget>[
       Text(
-        'Explore, Enjoy, Experience.',
+        'Explore, Enjoy, Experience',
         style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
@@ -91,4 +90,31 @@ Widget _buildTextSection(){
     ],
   );
 
+}
+
+Widget _buildBottomImageSection(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Image.network(
+          'https://picsum.photos/id/162/200/300',
+          height: 250,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+      ),
+      const SizedBox(height: 10),
+      const Text(
+        'Blue body of water',
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
+          color: Colors.black87,
+        ),
+      ),
+    ],
+  );
+}
 }
